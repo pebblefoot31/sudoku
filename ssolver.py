@@ -59,14 +59,34 @@ sl = [[0,0,8,0,0,0,5,0,7],\
     [2,0,1,0,0,0,4,0,0]]
 
 #print(sl[0])
+
+#code to print periphery of sudoku puzzle
 flag = 1
 r = 0
 c = 0
-while flag == 1:
-    if r == 0 and c <= 8:
-        print(sl[r][c]) 
+while flag == 1: 
+    if c <=7 and r == 0:
         c += 1
-    else:
-        c = 8 
-        print(sl[r][c])
+    if c == 8 and r <= 7:
         r += 1
+    if r == 8 and c >= 1:
+        c -= 1
+    if c == 0 and r >= 1:
+        r -= 1
+    if r == 1 and c <= 0:
+        flag = 0 
+    
+    print(sl[r][c]) 
+             
+
+
+#code to print sudoku puzzle units in spiral pattern
+
+
+
+
+
+
+
+
+
