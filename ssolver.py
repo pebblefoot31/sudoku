@@ -60,6 +60,7 @@ sl = [[0,0,8,0,0,0,5,0,7],\
 
 #print(sl[0])
 
+
 #code to print periphery of sudoku puzzle
 flag = 1
 r = 0
@@ -76,17 +77,41 @@ while flag == 1:
     if r == 1 and c <= 0:
         flag = 0 
     
-    print(sl[r][c]) 
+#    print(sl[r][c]) 
              
 
 
-#code to print sudoku puzzle units in spiral pattern
+#code to print periphery of sudoku puzzle in reverse
+f = 1
+row = 0
+col = 0
+while f == 1:
+    if row <= 7 and col == 0:
+        row += 1
+    if row == 8 and col <= 7:
+        col += 1 
+    if row >= 1 and col == 8:
+        row -= 1
+    if row == 0 and col >= 1:
+        col -= 1
+    if row == 0 and col == 0:
+        f = 0
+
+    print(sl[row][col])
 
 
-
-
-
-
-
-
+#code to print in spiral
+fl = 1
+ro = 0
+co = 0
+while fl ==1:
+    if co <= 7 and ro ==0:
+        co += 1
+    if co == 8 and ro <= 7:
+        ro += 1
+    if ro == 8 and co >= 1:
+        co -= 1
+    if co == 0 and ro >= 2:
+        ro -= 1
+    if co == 0 and ro == 1:
 
