@@ -97,21 +97,31 @@ while f == 1:
     if row == 0 and col == 0:
         f = 0
 
-    print(sl[row][col])
+   # print(sl[row][col])
 
 
 #code to print in spiral
 fl = 1
 ro = 0
 co = 0
+mn = 0
+mx = 8
 while fl ==1:
-    if co <= 7 and ro ==0:
+    if ro == mn and co <= (mx - 1):
+        print(sl[ro][co])
         co += 1
-    if co == 8 and ro <= 7:
+    if ro <= (mx - 1) and co == mx:
+        print(sl[ro][co])
         ro += 1
-    if ro == 8 and co >= 1:
+    if ro == mx and co >= (mn + 1):
+        print(sl[ro][co])
         co -= 1
-    if co == 0 and ro >= 2:
+    if ro >= (mn + 2) and co == mn:
+        print(sl[ro][co])
         ro -= 1
-    if co == 0 and ro == 1:
-
+    if ro == (mn + 1) and co == mn and mn <= 4 and mx >= 4:
+        mn += 1
+        mx -= 1
+    if ro == 4 and co == 4:
+        print(sl[ro][co])
+        fl = 0 
